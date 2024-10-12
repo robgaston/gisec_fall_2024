@@ -4,15 +4,17 @@ import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import style from "./mapbox/style.json";
 
-mapboxgl.accessToken = "";
+mapboxgl.accessToken = "pk.eyJ1Ijoicmdhc3RvbiIsImEiOiJJYTdoRWNJIn0.MN6DrT07IEKXadCU8xpUMg";
 
 const mapContainer = ref();
 
 onMounted(() => {
-  new mapboxgl.Map({
+  const map = new mapboxgl.Map({
     "container": mapContainer.value,
-    "style": style
+    "style": style,
   });
+
+  map.addControl(new mapboxgl.NavigationControl());
 });
 </script>
 
