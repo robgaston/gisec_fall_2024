@@ -1,0 +1,16 @@
+{
+    "version": 8,
+    "imports": [
+        {
+            "id": "basemap",
+            "url": "mapbox://styles/mapbox/standard"
+        }
+    ],
+    "sprite": "mapbox://sprites/mapbox/bright-v8",
+    "glyphs": "mapbox://fonts/mapbox/{fontstack}/{range}.pbf",
+    "projection": {
+        "name": "globe"
+    },
+    "sources": {},
+    "layers": []
+}
