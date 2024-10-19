@@ -3,7 +3,7 @@
     "imports": [
         {
             "id": "basemap",
-            "url": "mapbox://styles/rgaston/cm26ijez000ha01om1ldn1n5m"
+            "url": "mapbox://styles/rgaston/cm26ijez000ha01om1ldn1n5m?fresh=true"
         }
     ],
     "sprite": "mapbox://sprites/mapbox/bright-v8",
@@ -11,6 +11,52 @@
     "projection": {
         "name": "globe"
     },
-    "sources": {},
-    "layers": []
+    "sources": {
+        "neighborhoods": {
+            "type": "geojson",
+            "data": {
+                "type": "FeatureCollection",
+                "features": []
+            }
+        }
+    },
+    "layers": [
+        {
+            "id": "neighborhoods-fill",
+            "type": "fill-extrusion",
+            "source": "neighborhoods",
+            "paint": {
+                "fill-extrusion-color": [
+                    "step",
+                    [
+                        "get",
+                        "count"
+                    ],
+                    "rgb(254,237,222)",
+                    50, "rgb(253,208,162)",
+                    100, "rgb(253,174,107)",
+                    300, "rgb(253,141,60)",
+                    600, "rgb(230,85,13)",
+                    1000, "rgb(166,54,3)"
+                ],
+                "fill-extrusion-opacity": 0.5,
+                "fill-extrusion-height": [
+                    "*",
+                    [
+                        "get",
+                        "count"
+                    ],
+                    5
+                ]
+            }
+        },
+        {
+            "id": "neighborhoods-outline",
+            "type": "line",
+            "source": "neighborhoods",
+            "paint": {
+                "line-width": 3
+            }
+        }
+    ]
 }
